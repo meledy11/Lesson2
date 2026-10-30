@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中文课程 — Полный курс HSK1–HSK2</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#2c3e50;--accent:#16a085;--blue:#3498db;--blue-light:#eaf2fb;--sand:#f8f9fb;--border:#e3e8ef;--text:#333;--muted:#7f8c9b;--radius:12px;--shadow:0 4px 16px rgba(44,62,80,.08)}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',Tahoma,sans-serif;background:linear-gradient(135deg,#f4f7f6,#e8ecf1);color:var(--text);line-height:1.7;padding:20px;min-height:100vh;display:flex;justify-content:center}
+.main-container{width:100%;max-width:900px;background:#fff;padding:32px 36px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.hidden{display:none!important}
+.home-btn{display:inline-block;padding:9px 18px;background:#6c757d;color:#fff;border-radius:8px;font-size:14px;border:none;cursor:pointer;font-family:inherit;margin-bottom:22px}
+.home-btn:hover{background:#5a6268}
+.lesson-content>h2{color:var(--primary);font-size:24px;margin:0 0 28px;text-align:center;padding-bottom:10px;border-bottom:2px dashed var(--blue)}
+.subtitle{font-size:16px;color:var(--muted);font-weight:400}
+.lesson-section{margin-bottom:34px}
+.lesson-section>h3{color:var(--blue);font-size:20px;margin:22px 0 18px;padding-left:12px;border-left:4px solid var(--blue)}
+.text-block{background:var(--sand);padding:20px;border-radius:var(--radius);border:1px solid var(--border);margin-bottom:22px}
+.text-block h4{color:var(--primary);font-size:17px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border);font-weight:600}
+.dialogue-entry{margin-bottom:12px;padding:12px 16px;border-radius:10px;cursor:pointer;background:#fff;border:1px solid #eef1f5;transition:background .2s,border-color .2s}
+.dialogue-entry:hover{background:var(--blue-light);border-color:var(--blue)}
+.source-language p{margin:0 0 3px}
+.chinese-text{font-size:18px;font-weight:500;color:var(--primary)}
+.pinyin-text{font-size:15px;color:#8e44ad;font-style:italic}
+.translation-block{display:none;margin-top:8px;padding-left:10px;border-left:2px solid #bdc3c7}
+.russian-translation{font-size:16px;color:var(--accent);font-style:italic}
+.new-words-simple{margin-top:15px;padding-top:10px;border-top:1px dashed #ccc;font-size:15px}
+.new-words-simple p{margin:3px 0}
+.new-words-simple strong{color:#c0392b}
+.new-words-simple .pos{color:#777;font-style:italic;font-size:.9em}
+.pinyin-block{margin-bottom:25px;padding:18px;background:#fff;border-radius:var(--radius);border:1px solid var(--border)}
+.pinyin-block h4{color:var(--primary);font-size:17px;margin:0 0 15px;font-weight:600}
+.pinyin-subtitle{font-size:14px;color:var(--muted);font-weight:400;font-style:italic}
+.pinyin-table-container{display:flex;gap:20px;flex-wrap:wrap}
+.pinyin-column{flex:1;min-width:200px;background:var(--sand);border-radius:8px;padding:14px;border:1px solid var(--border)}
+.pinyin-column h5{color:var(--blue);font-size:16px;margin:0 0 12px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+.pinyin-list{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.pinyin-list li{display:inline-block;padding:5px 12px;background:var(--blue-light);color:var(--primary);border-radius:6px;font-size:15px;font-family:'Courier New',monospace;font-weight:500}
+.pinyin-list.finals-list li{background:#fdf2e6;color:#8e44ad}
+.tones-example{background:#fff;padding:14px;border-radius:8px;border-left:4px solid var(--blue);margin:15px 0}
+.tones-example p{margin:6px 0;font-size:16px}
+.tone{font-family:'Courier New',monospace;font-weight:700;font-size:18px}
+.tone1{color:#e74c3c}.tone2{color:#27ae60}.tone3{color:#2980b9}.tone4{color:#8e44ad}
+.tone-label{font-size:13px;color:var(--muted);font-style:italic}
+.pinyin-list.tone-practice li,.pinyin-list.word-reading-practice li{background:#e8f5e9;color:#2e7d32;font-size:16px;padding:7px 14px}
+.syllable-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:15px}
+.syllable-table th,.syllable-table td{border:1px solid #d0d7de;padding:10px 14px;text-align:left}
+.syllable-table th{background:var(--blue-light);color:var(--primary);font-weight:600}
+.syllable-table tr:nth-child(even) td{background:#f9fbfd}
+.tone-sandhi-table{width:100%;border-collapse:collapse;margin:15px 0;text-align:center;font-size:16px}
+.tone-sandhi-table td{padding:8px 12px;border:1px solid var(--border)}
+.tone-sandhi-table td:nth-child(3n+2){color:#e74c3c;font-weight:700}
+.note{background:#fff8e6;border-left:4px solid #f0b400;padding:12px 16px;border-radius:6px;margin-top:15px;font-size:15px}
+.exercise-list{list-style-type:decimal;padding-left:25px}
+.exercise-list li{margin-bottom:18px}
+.exercise-sentence{font-size:17px;font-weight:500;cursor:pointer;margin:0 0 6px;padding:8px 12px;border-radius:6px;background:#fff;border:1px solid #eef1f5;transition:background .2s,border-color .2s}
+.exercise-sentence:hover{background:var(--blue-light);border-color:var(--blue)}
+.exercise-translation{font-size:15px;color:var(--accent);font-style:italic;padding:6px 14px;border-left:2px solid #bdc3c7;margin:4px 0 0}
+.lesson-row{display:flex;align-items:flex-start;gap:20px;margin-bottom:30px}
+.text-column{flex:1}
+.image-column{flex:0 0 48%;max-width:500px}
+.image-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lesson-illustration{width:100%;height:auto;display:block;border-radius:6px;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,.05);background:#fff}
+.level-container{margin-bottom:18px;border-radius:var(--radius);overflow:hidden}
+.level-title{background:linear-gradient(90deg,var(--primary),#3d566e);color:#fff;cursor:pointer;padding:16px 22px;font-size:20px;font-weight:600;border-radius:var(--radius);margin:0;position:relative;user-select:none}
+.level-title::after{content:'+';position:absolute;right:22px;top:50%;transform:translateY(-50%);font-size:24px;font-weight:700}
+.level-title.active::after{content:'−'}
+.collapsible-content{max-height:0;overflow:hidden;background:var(--sand);border-radius:0 0 var(--radius) var(--radius);border:1px solid var(--border);border-top:none;transition:max-height .35s ease-out;padding:0 20px}
+.course-menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;padding:18px 0}
+.menu-item{display:block;padding:14px 18px;background:#fff;border-radius:8px;font-weight:500;color:var(--blue);border:1px solid var(--border);border-left:4px solid var(--blue);transition:all .2s;cursor:pointer;font-family:inherit;font-size:15px;text-align:left;width:100%}
+.menu-item:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+.menu-item.exercise-item{background:#eafaf3;border-left-color:var(--accent);color:#0e6b57}
+.menu-item.exercise-item:hover{background:var(--accent);color:#fff}
+.menu-item.finish-item{background:linear-gradient(135deg,#fef3c7,#fde68a);border-left-color:#f59e0b;color:#92400e;font-weight:600}
+.menu-item.finish-item:hover{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff}
+.main-container>h1{color:var(--primary);text-align:center;font-size:28px;font-weight:700;margin-bottom:28px;padding-bottom:14px;border-bottom:3px solid var(--blue)}
+.notes-block{background:#fff;padding:16px;border-radius:8px;border:1px solid var(--border);border-left:4px solid var(--accent);margin-bottom:18px}
+.notes-block h4{color:var(--primary);font-size:16px;margin-bottom:10px}
+.notes-subtitle{font-size:13px;color:var(--muted);font-style:italic;font-weight:400}
+.grammar-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+.grammar-table th,.grammar-table td{border:1px solid #d0d7de;padding:8px 12px;text-align:left}
+.grammar-table th{background:var(--blue-light);color:var(--primary);font-weight:600}
+.grammar-table tr:nth-child(even) td{background:#f9fbfd}
+.exercise-block{background:var(--sand);padding:16px;border-radius:8px;border:1px solid var(--border);margin-bottom:16px}
+.exercise-block h4{color:var(--primary);font-size:16px;margin-bottom:10px}
+.exercise-subtitle{font-size:13px;color:var(--muted);font-style:italic;font-weight:400}
+.question-list{list-style-type:decimal;padding-left:25px}
+.question-list li{margin-bottom:8px;font-size:16px}
+.example-sentences{padding-left:22px;font-size:16px}
+.example-sentences li{margin-bottom:6px}
+.neutral-tone-examples{background:#fff;padding:14px;border-radius:8px;border-left:4px solid var(--accent);margin:15px 0}
+.neutral-tone-examples p{margin:6px 0;font-size:16px}
+@media(max-width:600px){.main-container{padding:20px}.lesson-row{flex-direction:column}.image-column{flex:1 1 100%;max-width:100%}}
+</style>
+</head>
+<body>
+<div class="main-container">
+
+<!-- ==================== ГЛАВНОЕ МЕНЮ ==================== -->
+<div id="view-home">
+<h1>中文课程目录 (Содержание курса)</h1>
+
+<div class="level-container">
+<h2 class="level-title" data-level="hsk1">HSK1</h2>
+<div class="collapsible-content" id="hsk1">
+<div class="course-menu">
+<button class="menu-item" data-lesson="lesson1">第一课：你好</button>
+<button class="menu-item" data-lesson="lesson2">第二课：谢谢你</button>
+<button class="menu-item exercise-item" data-lesson="exercises">1-9课习题 (Практикум)</button>
+<button class="menu-item exercise-item" data-lesson="exercises2">10-12课习题 (Практикум)</button>
+<button class="menu-item exercise-item" data-lesson="exercises_grammar">语法综合练习</button>
+<button class="menu-item exercise-item" data-lesson="grammar2">语法课2：主谓结构与修饰语</button>
+</div>
+</div>
+</div>
+
+<div class="level-container">
+<h2 class="level-title" data-level="hsk2">HSK2</h2>
+<div class="collapsible-content" id="hsk2">
+<div class="course-menu">
+<button class="menu-item" data-lesson="hsk2lesson1">第一课：九月去北京旅游最好</button>
+<button class="menu-item" data-lesson="hsk2lesson2">第二课：你很少生病</button>
+<button class="menu-item" data-lesson="hsk2lesson3">第三课：这块手表是你的吗？</button>
+<button class="menu-item" data-lesson="hsk2lesson4">第四课：这个工作是他帮我介绍的</button>
+<button class="menu-item" data-lesson="hsk2lesson5">第五课：就买这件吧</button>
+<button class="menu-item" data-lesson="hsk2lesson6">第六课：我会说汉语</button>
+<button class="menu-item" data-lesson="hsk2lesson7">第七课：今天几号？</button>
+<button class="menu-item" data-lesson="hsk2lesson8">第八课：我想喝茶</button>
+</div>
+</div>
+</div>
+
+<div class="level-container">
+<h2 class="level-title" data-level="final">毕业 / Выпуск</h2>
+<div class="collapsible-content" id="final">
+<div class="course-menu">
+<button class="menu-item finish-item" data-lesson="finish">🎓 完成课程 (Завершить курс)</button>
+</div>
+</div>
+</div>
+
+</div><!-- /view-home -->
